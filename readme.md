@@ -59,8 +59,6 @@ Ready for connection
 The service is ready.
 Press <ENTER> to terminate service.
 
-2016-03-08 오전 1:02:02 : ABCDEFGHIJKMLNOP
-2016-03-08 오전 1:02:02 : ABCDEFGHIJKMLNOP
 2016-03-08 오전 1:02:33 : ABCDEFGHIJKMLNOP
 2016-03-08 오전 1:02:34 : ABCDEFGHIJKMLNOP
 ```
