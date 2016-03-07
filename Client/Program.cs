@@ -112,7 +112,7 @@ namespace Client
             using (StreamReader sr = new StreamReader(s))
             {
                 L("FireAndForget #2");
-                L("StreamTestAsync01 : {await sr.ReadToEndAsync()}");
+                L($"StreamTestAsync01 : {await sr.ReadToEndAsync()}");
                 L("FireAndForget #3");
             }
         }
