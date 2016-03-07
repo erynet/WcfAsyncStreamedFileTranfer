@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Contract" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <msf:Streamed xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+        </msf:Streamed>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContract_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IContract_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContract_FileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:FileList" />
+  </wsdl:message>
+  <wsdl:message name="IContract_FileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvFileDownloadRequestMessage">
+    <wsdl:part name="parameters" element="tns:EvFileDownloadRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="EvFileDownloadRequestMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+  </wsdl:message>
+  <wsdl:message name="EvFileDownloadResponseMessage">
+    <wsdl:part name="parameters" element="tns:EvFileDownloadResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="EvFileDownloadResponseMessage_Headers">
+    <wsdl:part name="Exist" element="tns:Exist" />
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Size" element="tns:Size" />
+  </wsdl:message>
+  <wsdl:message name="EvFileUploadRequestMessage">
+    <wsdl:part name="parameters" element="tns:EvFileUploadRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="EvFileUploadRequestMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Size" element="tns:Size" />
+  </wsdl:message>
+  <wsdl:message name="EvFileUploaResponseMessage">
+    <wsdl:part name="parameters" element="tns:EvFileUploaResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="EvFileUploaResponseMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Size" element="tns:Size" />
+    <wsdl:part name="Success" element="tns:Success" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestSync01_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestSync01" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestSync01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestSync01Response" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestSync02_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestSync02" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestSync02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestSync02Response" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestAsync01_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestAsync01" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestAsync01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestAsync01Response" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestAsync02_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestAsync02" />
+  </wsdl:message>
+  <wsdl:message name="IContract_StreamTestAsync02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamTestAsync02Response" />
+  </wsdl:message>
+  <wsdl:message name="IContract_DownLoadFileTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadFileTest" />
+  </wsdl:message>
+  <wsdl:message name="IContract_DownLoadFileTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadFileTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IContract">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/Ping" message="tns:IContract_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/PingResponse" message="tns:IContract_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/FileList" message="tns:IContract_FileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/FileListResponse" message="tns:IContract_FileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/FileDownload" name="EvFileDownloadRequestMessage" message="tns:EvFileDownloadRequestMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/FileDownloadResponse" name="EvFileDownloadResponseMessage" message="tns:EvFileDownloadResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/FileUpload" name="EvFileUploadRequestMessage" message="tns:EvFileUploadRequestMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/FileUploadResponse" name="EvFileUploaResponseMessage" message="tns:EvFileUploaResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestSync01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/StreamTestSync01" message="tns:IContract_StreamTestSync01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/StreamTestSync01Response" message="tns:IContract_StreamTestSync01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestSync02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/StreamTestSync02" message="tns:IContract_StreamTestSync02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/StreamTestSync02Response" message="tns:IContract_StreamTestSync02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestAsync01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/StreamTestAsync01" message="tns:IContract_StreamTestAsync01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/StreamTestAsync01Response" message="tns:IContract_StreamTestAsync01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestAsync02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/StreamTestAsync02" message="tns:IContract_StreamTestAsync02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/StreamTestAsync02Response" message="tns:IContract_StreamTestAsync02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFileTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/DownLoadFileTest" message="tns:IContract_DownLoadFileTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/DownLoadFileTestResponse" message="tns:IContract_DownLoadFileTest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IContract" type="tns:IContract">
+    <wsp:PolicyReference URI="#NetTcpBinding_IContract_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IContract/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileList">
+      <soap12:operation soapAction="http://tempuri.org/IContract/FileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileDownload">
+      <soap12:operation soapAction="http://tempuri.org/IContract/FileDownload" style="document" />
+      <wsdl:input name="EvFileDownloadRequestMessage">
+        <soap12:header message="tns:EvFileDownloadRequestMessage_Headers" part="FileName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EvFileDownloadResponseMessage">
+        <soap12:header message="tns:EvFileDownloadResponseMessage_Headers" part="Exist" use="literal" />
+        <soap12:header message="tns:EvFileDownloadResponseMessage_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:EvFileDownloadResponseMessage_Headers" part="Size" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <soap12:operation soapAction="http://tempuri.org/IContract/FileUpload" style="document" />
+      <wsdl:input name="EvFileUploadRequestMessage">
+        <soap12:header message="tns:EvFileUploadRequestMessage_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:EvFileUploadRequestMessage_Headers" part="Size" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EvFileUploaResponseMessage">
+        <soap12:header message="tns:EvFileUploaResponseMessage_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:EvFileUploaResponseMessage_Headers" part="Size" use="literal" />
+        <soap12:header message="tns:EvFileUploaResponseMessage_Headers" part="Success" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestSync01">
+      <soap12:operation soapAction="http://tempuri.org/IContract/StreamTestSync01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestSync02">
+      <soap12:operation soapAction="http://tempuri.org/IContract/StreamTestSync02" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestAsync01">
+      <soap12:operation soapAction="http://tempuri.org/IContract/StreamTestAsync01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StreamTestAsync02">
+      <soap12:operation soapAction="http://tempuri.org/IContract/StreamTestAsync02" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFileTest">
+      <soap12:operation soapAction="http://tempuri.org/IContract/DownLoadFileTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Contract">
+    <wsdl:port name="NetTcpBinding_IContract" binding="tns:NetTcpBinding_IContract">
+      <soap12:address location="net.tcp://localhost:30081/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:30081/</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
