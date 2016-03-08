@@ -65,6 +65,12 @@ namespace Client.AsyncStream {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContract/StreamTestAsync02", ReplyAction="http://tempuri.org/IContract/StreamTestAsync02Response")]
         System.Threading.Tasks.Task StreamTestAsync02Async(System.IO.Stream m);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContract/UploadFileTest", ReplyAction="http://tempuri.org/IContract/UploadFileTestResponse")]
+        void UploadFileTest(System.IO.Stream s);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContract/UploadFileTest", ReplyAction="http://tempuri.org/IContract/UploadFileTestResponse")]
+        System.Threading.Tasks.Task UploadFileTestAsync(System.IO.Stream s);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContract/DownLoadFileTest", ReplyAction="http://tempuri.org/IContract/DownLoadFileTestResponse")]
         System.IO.Stream DownLoadFileTest(string fn);
         
@@ -296,6 +302,14 @@ namespace Client.AsyncStream {
         
         public System.Threading.Tasks.Task StreamTestAsync02Async(System.IO.Stream m) {
             return base.Channel.StreamTestAsync02Async(m);
+        }
+        
+        public void UploadFileTest(System.IO.Stream s) {
+            base.Channel.UploadFileTest(s);
+        }
+        
+        public System.Threading.Tasks.Task UploadFileTestAsync(System.IO.Stream s) {
+            return base.Channel.UploadFileTestAsync(s);
         }
         
         public System.IO.Stream DownLoadFileTest(string fn) {

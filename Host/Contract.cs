@@ -151,7 +151,7 @@ namespace Host
             await s.CopyToAsync(ms);
             ms.Position = 0;
             StreamReader sr = new StreamReader(ms);
-            Console.WriteLine($"{DateTime.Now} : {await sr.ReadToEndAsync()}");
+            L($"{await sr.ReadToEndAsync()}");
 
 
             //using (MemoryStream ms = new MemoryStream())
@@ -188,6 +188,27 @@ namespace Host
             //return ms
         }
 
+        public async Task UploadFileTestAsync(Stream s)
+        {
+            L("UploadFileTestAsync ... ");
+            Guid g = Guid.NewGuid();
+            FileInfo fi = new FileInfo(_path + g.ToString());
+            using (FileStream fs = fi.OpenWrite())
+            {
+                Task t = s.CopyToAsync(fs);
+                Stopwatch st = new Stopwatch();
+                st.Restart();
+                while (true)
+                {
+                    if (t.Wait(10))
+                    {
+                        L($"{s.Position}, {st.ElapsedMilliseconds}, {g.ToString()}");
+                        break;
+                    }
+                    L($"{s.Position}, {st.ElapsedMilliseconds}");
+                }
+            }
+        }
 
         private Stream GenerateStreamFromString(string s)
         {
@@ -197,6 +218,11 @@ namespace Host
             writer.Flush();
             stream.Position = 0;
             return stream;
+        }
+
+        private static void L(string s)
+        {
+            Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} : {s}");
         }
     }
 }

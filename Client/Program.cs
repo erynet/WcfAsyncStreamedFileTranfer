@@ -70,7 +70,27 @@ namespace Client
                         L($"Complete, {ss.Position} Bytes, {st.ElapsedMilliseconds} ms, {(ss.Position/(st.ElapsedMilliseconds/1000.0))/(1024.0*1024.0):F2} mb/s");
                     }
                 }
-                
+
+                DirectoryInfo d = new DirectoryInfo(_path);
+                foreach (var f in d.GetFiles())
+                {
+                    L($"Uploading ... {f}");
+                    FileInfo fi = new FileInfo(_path + f);
+                    using (FileStream fs = fi.OpenRead())
+                    {
+                        Task t = cl.UploadFileTestAsync(fs);
+                        Stopwatch st = new Stopwatch();
+                        st.Restart();
+                        while (!t.Wait(100))
+                        {
+                            L($"{fs.Position} / , {st.ElapsedMilliseconds} ms");
+                        }
+                        L($"Complete, {fs.Position} Bytes, {st.ElapsedMilliseconds} ms, {(fs.Position / (st.ElapsedMilliseconds / 1000.0)) / (1024.0 * 1024.0):F2} mb/s");
+                    }
+                }
+
+
+
                 L("Waiting ...");
                 Console.ReadLine();
 

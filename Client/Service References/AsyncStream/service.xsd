@@ -102,6 +102,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UploadFileTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/Message" name="s" type="q8:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileTestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DownLoadFileTest">
     <xs:complexType>
       <xs:sequence>
@@ -112,7 +124,7 @@
   <xs:element name="DownLoadFileTestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/Message" name="DownLoadFileTestResult" type="q8:StreamBody" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/Message" name="DownLoadFileTestResult" type="q9:StreamBody" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

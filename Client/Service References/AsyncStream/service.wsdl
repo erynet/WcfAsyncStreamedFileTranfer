@@ -85,6 +85,12 @@
   <wsdl:message name="IContract_StreamTestAsync02_OutputMessage">
     <wsdl:part name="parameters" element="tns:StreamTestAsync02Response" />
   </wsdl:message>
+  <wsdl:message name="IContract_UploadFileTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileTest" />
+  </wsdl:message>
+  <wsdl:message name="IContract_UploadFileTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileTestResponse" />
+  </wsdl:message>
   <wsdl:message name="IContract_DownLoadFileTest_InputMessage">
     <wsdl:part name="parameters" element="tns:DownLoadFileTest" />
   </wsdl:message>
@@ -123,6 +129,10 @@
     <wsdl:operation name="StreamTestAsync02">
       <wsdl:input wsaw:Action="http://tempuri.org/IContract/StreamTestAsync02" message="tns:IContract_StreamTestAsync02_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IContract/StreamTestAsync02Response" message="tns:IContract_StreamTestAsync02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContract/UploadFileTest" message="tns:IContract_UploadFileTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContract/UploadFileTestResponse" message="tns:IContract_UploadFileTest_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DownLoadFileTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IContract/DownLoadFileTest" message="tns:IContract_DownLoadFileTest_InputMessage" />
@@ -207,6 +217,15 @@
     </wsdl:operation>
     <wsdl:operation name="StreamTestAsync02">
       <soap12:operation soapAction="http://tempuri.org/IContract/StreamTestAsync02" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileTest">
+      <soap12:operation soapAction="http://tempuri.org/IContract/UploadFileTest" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

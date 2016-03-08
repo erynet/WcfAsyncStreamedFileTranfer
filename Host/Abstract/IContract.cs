@@ -45,6 +45,9 @@ namespace Host.Abstract
         Task StreamTestAsync02(Stream m);
 
         [OperationContract]
+        Task UploadFileTestAsync(Stream s);
+
+        [OperationContract]
         Task<Stream> DownLoadFileTestAsync(string fn);
     }
 }
